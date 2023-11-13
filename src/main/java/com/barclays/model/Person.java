@@ -6,7 +6,7 @@ import lombok.*;
 import java.beans.ConstructorProperties;
 
 @AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
 public class Person {

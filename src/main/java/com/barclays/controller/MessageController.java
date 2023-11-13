@@ -11,7 +11,6 @@ import java.util.List;
 public class MessageController {
 
     @GetMapping("/messages")
-    
     public List<Message> getAllMessages(){
         List<Message> messages = new ArrayList<>();
         Message message = new Message();
