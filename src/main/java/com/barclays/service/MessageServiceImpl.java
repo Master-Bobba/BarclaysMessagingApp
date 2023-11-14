@@ -4,6 +4,8 @@ import com.barclays.model.Message;
 import com.barclays.repository.MessageRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,10 +14,16 @@ import java.util.List;
 
 @Service
 @Slf4j
-@AllArgsConstructor
+//@AllArgsConstructor
 public class MessageServiceImpl implements MessageService{
 
     private MessageRepository messageRepository;
+
+
+    @Autowired  // not required in hte latest version of Spring. Done automatically
+    public MessageServiceImpl(MessageRepository messageRepository){
+        this.messageRepository = messageRepository;
+    }
 
     @Override
     public List<Message> findAll() {

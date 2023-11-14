@@ -27,3 +27,8 @@ public class Message {
         this.id = id;
     }
 }
+
+/**
+ * @Entity - binds the class to a database table called 'Message" - same as the class name
+ * will be looking for columns ID and content
+ */
