@@ -11,3 +11,17 @@ public class BarclaysMessagingAppApplication {
 	}
 
 }
+
+
+/**
+ * Quite useful docs stuff for all commands of the API
+ *
+ * Need to add the below dependency
+ * and open the following website:
+ * http://localhost:8080/swagger-ui/index.html
+ */
+//<dependency>
+//<groupId>org.springdoc</groupId>
+//<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+//<version>2.2.0</version>
+//</dependency>
