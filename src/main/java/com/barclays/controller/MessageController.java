@@ -1,6 +1,7 @@
 package com.barclays.controller;
 
 import com.barclays.model.Message;
+import com.barclays.service.MessageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,26 +13,34 @@ import java.util.List;
 @RestController
 public class MessageController {
 
-    @GetMapping("/messages")
-    public List<Message> getAllMessages(){
-        List<Message> messages = new ArrayList<>();
-        Message message = new Message();
-        message.setContent("Spring is cool");
-        messages.add(message);
-        return messages;
+    private final MessageService messageService;
+
+    public MessageController(MessageService messageService){
+        this.messageService = messageService;
     }
 
-    @GetMapping("/messages/{id}")
-    public Message getMessage(@PathVariable int id, @RequestParam(value = "filter", defaultValue = "No filter", required = false) String filter){
-        Message message = new Message();
-        message.setContent("the message " + id + " is " + filter);
-        return message;
+    @GetMapping("/messages")
+    public List<Message> getAllMessages(){
+        return messageService.findAll();
     }
+
+    @GetMapping("/message/{id}")
+    public Message getMessage(@PathVariable int id){
+        return messageService.findById(id);
+    }
+
+
+//    @GetMapping("/messages/{id}")
+//    public Message getMessage(@PathVariable int id, @RequestParam(value = "filter", defaultValue = "No filter", required = false) String filter){
+//        Message message = new Message();
+//        message.setContent("the message " + id + " is " + filter);
+//        return message;
+//    }
 
 }
 
 
 /**
- * @RestController annotation is not enought
+ * @RestController annotation is not enough
  * We need Mapping as well i.e. @GetMapping, @PostMapping, @PutMapping or @DeleteMapping
  */
