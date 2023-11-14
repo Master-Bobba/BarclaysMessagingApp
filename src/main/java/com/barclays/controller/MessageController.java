@@ -2,6 +2,8 @@ package com.barclays.controller;
 
 import com.barclays.model.Message;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -18,6 +20,14 @@ public class MessageController {
         messages.add(message);
         return messages;
     }
+
+    @GetMapping("/messages/{id}")
+    public Message getMessage(@PathVariable int id, @RequestParam(value = "filter", defaultValue = "No filter", required = false) String filter){
+        Message message = new Message();
+        message.setContent("the message " + id + " is " + filter);
+        return message;
+    }
+
 }
 
 

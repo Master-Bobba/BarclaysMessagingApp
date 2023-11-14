@@ -30,8 +30,8 @@ public class PersonControllerTest {
     @Test
     public void testGetOnePersonWithFilter() {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Person> response = restTemplate.getForEntity("http://localhost:8080/person/1?filter=test", Person.class);
-        Person person= response.getBody();
+        Person person = restTemplate.getForObject("http://localhost:8080/person/1?filter=test", Person.class);
+
         assertEquals(person.getName(), "test");
     }
 }
