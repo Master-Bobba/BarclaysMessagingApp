@@ -1,6 +1,7 @@
 package com.barclays.service;
 
 import com.barclays.model.Message;
+import com.barclays.model.Person;
 import com.barclays.repository.MessageRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -34,8 +36,8 @@ public class MessageServiceImpl implements MessageService{
 
     @Override
     public Message findById(int id){
-        Message message = new Message(id, "Spring is cool " + id);
-        return message;
+        Optional<Message> messageOptional = messageRepository.findById(id);
+        return messageOptional.get();
     }
 
 

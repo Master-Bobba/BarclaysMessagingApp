@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -26,9 +27,7 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public Person findById(int id) {
-        List<Person> people = new ArrayList<>();
-        people.add(new Person(0, "Alice", "alice@gmail.com "));
-        people.add(new Person(1, "Bobby","bayvazov@gmail.com "));
-        return people.get(id);
+        Optional<Person> personOptional = personRepository.findById(id);
+        return personOptional.get();
     }
 }
