@@ -1,6 +1,7 @@
 package com.barclays;
 
-import com.barclays.util.Populator;
+import com.barclays.util.MessagePopulator;
+import com.barclays.util.PersonPopulator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,8 +11,12 @@ public class BarclaysMessagingAppApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(BarclaysMessagingAppApplication.class, args);
-		Populator populator = context.getBean("populator", Populator.class);
+		
+		MessagePopulator populator = context.getBean("messagePopulator", MessagePopulator.class);
 		populator.populate();
+
+		PersonPopulator personPopulator = context.getBean("personPopulator", PersonPopulator.class);
+		personPopulator.populate();
 	}
 
 }
