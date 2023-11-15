@@ -19,7 +19,6 @@ public class MessageServiceImpl implements MessageService{
 
     private MessageRepository messageRepository;
 
-
     @Autowired  // not required in hte latest version of Spring. Done automatically
     public MessageServiceImpl(MessageRepository messageRepository){
         this.messageRepository = messageRepository;
@@ -35,8 +34,7 @@ public class MessageServiceImpl implements MessageService{
 
     @Override
     public Message findById(int id){
-        Message message = new Message();
-        message.setContent("Spring is cool " + id);
+        Message message = new Message(id, "Spring is cool " + id);
         return message;
     }
 
