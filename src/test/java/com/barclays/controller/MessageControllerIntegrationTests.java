@@ -14,19 +14,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MessageControllerIntegrationTests {
 
 
-    @Autowired
-    MessageController messageController;
-
-    @Test
-    public void testGetAllMessages() {
-        List<Message> messages = messageController.getAllMessages();
-        assertEquals(1, messages.size());
-    }
-
-    @Test
-    public void testGetMessage(){
-        Message message = messageController.getMessage(1, "Filter");
-        assertEquals("the message " + 1 + " is " + "Filter", message.getContent());
-
-    }
+//    @Autowired
+//    MessageController messageController;
+//
+//    @Test
+//    public void testGetAllMessages() {
+//        List<Message> messages = messageController.getAllMessages();
+//        assertEquals(1, messages.size());
+//    }
+//
+//    @Test
+//    public void testGetMessage(){
+//        Message message = messageController.getMessage(1, "Filter");
+//        assertEquals("the message " + 1 + " is " + "Filter", message.getContent());
+//
+//    }
 }

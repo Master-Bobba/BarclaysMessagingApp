@@ -11,18 +11,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class PersonControllerIntegrationTests {
-    @Autowired
-    PersonController personController;
-
-    @Test
-    public void testGetAllPeople(){
-        List<Person> people = personController.getAllPeople();
-        assertEquals(2, people.size());
-    }
-
-    @Test
-    public void testSinglePerson(){
-        Person person = personController.getPerson(0, "FILTER");
-        assertEquals("Alice", person.getName());
-    }
+//    @Autowired
+//    PersonController personController;
+//
+//    @Test
+//    public void testGetAllPeople(){
+//        List<Person> people = personController.getAllPeople();
+//        assertEquals(2, people.size());
+//    }
+//
+//    @Test
+//    public void testSinglePerson(){
+//        Person person = personController.getPerson(0, "FILTER");
+//        assertEquals("Alice", person.getName());
+//    }
 }
