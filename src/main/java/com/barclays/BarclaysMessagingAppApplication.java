@@ -12,11 +12,11 @@ public class BarclaysMessagingAppApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(BarclaysMessagingAppApplication.class, args);
 
-		MessagePopulator populator = context.getBean("messagePopulator", MessagePopulator.class);
-		populator.populate();
-
-		PersonPopulator personPopulator = context.getBean("personPopulator", PersonPopulator.class);
-		personPopulator.populate();
+//		MessagePopulator populator = context.getBean("messagePopulator", MessagePopulator.class);
+//		populator.populate();
+//
+//		PersonPopulator personPopulator = context.getBean("personPopulator", PersonPopulator.class);
+//		personPopulator.populate();
 	}
 
 }

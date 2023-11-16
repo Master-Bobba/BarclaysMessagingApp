@@ -37,7 +37,12 @@ public class MessageServiceImpl implements MessageService{
     @Override
     public Message findById(int id){
         Optional<Message> messageOptional = messageRepository.findById(id);
-        return messageOptional.get();
+        return messageOptional.orElseGet(() -> new Message("Default Message: Nothing found with id = " + id));
+    }
+
+    @Override
+    public List<Message> findByContentContains(String filter) {
+        return messageRepository.findByContentContains(filter);
     }
 
 

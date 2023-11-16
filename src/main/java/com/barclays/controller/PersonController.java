@@ -3,6 +3,8 @@ package com.barclays.controller;
 import com.barclays.model.Message;
 import com.barclays.model.Person;
 import com.barclays.service.PersonService;
+import io.micrometer.common.util.StringUtils;
+import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,9 +25,15 @@ public class PersonController {
     }
 
     @GetMapping("/people")
-    public List<Person> getAllPeople(){
+    public List<Person> getAllPeople(@PathParam("filter") String filter){
         log.debug("in the getAll People method.");
-        return personService.findAll();
+        List<Person> people;
+        if (StringUtils.isNotBlank(filter)){
+            people = personService.findByNameContains(filter);
+        } else {
+            people = personService.findAll();
+        }
+        return people;
     }
 
     @GetMapping("/people/{id}")

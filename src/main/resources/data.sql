@@ -1,4 +1,4 @@
-Insert into Message (id, content) values (100, 'Bobby is the best');
+Insert into Message (id, content) values (100, 'Bobby is the first message creator');
 Insert into Message (id, content) values (200, 'Alice is the best');
 Insert into Message (id, content) values (300, 'Alex is the best');
 Insert into Message (id, content) values (400, 'Niko is the best');

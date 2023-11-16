@@ -28,6 +28,11 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public Person findById(int id) {
         Optional<Person> personOptional = personRepository.findById(id);
-        return personOptional.get();
+        return personOptional.orElseGet(()-> new Person("DEFAULT PERSON: Person with id = " + id + " NOT found."));
+    }
+
+    @Override
+    public List<Person> findByNameContains(String filter) {
+        return personRepository.findByNameContains(filter);
     }
 }

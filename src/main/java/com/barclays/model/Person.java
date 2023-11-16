@@ -27,6 +27,10 @@ public class Person {
         this.email = email;
     }
 
+    public Person(String name){
+        this.name = name;
+    }
+
 }
 
 /**

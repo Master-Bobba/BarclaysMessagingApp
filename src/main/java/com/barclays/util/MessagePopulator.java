@@ -18,11 +18,11 @@ public class MessagePopulator {
     }
 
     public void populate(){
-        Message m1 = new Message(100, "First Message");
+        Message m1 = new Message("first Message");
         messageRepository.save(m1);
 
-        messageRepository.save(new Message("Second Message"));
-        messageRepository.save(new Message("Third Message"));
-        messageRepository.save(new Message("Fourth Message"));
+        messageRepository.save(new Message("second Message"));
+        messageRepository.save(new Message("third Message"));
+        messageRepository.save(new Message("fourth Message"));
     }
 }
