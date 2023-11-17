@@ -35,4 +35,11 @@ public class PersonServiceImpl implements PersonService{
     public List<Person> findByNameContains(String filter) {
         return personRepository.findByNameContains(filter);
     }
+
+    @Override
+    public List<Person> searchByName(String name) {
+        return personRepository.searchByName(name);
+    }
+
+
 }

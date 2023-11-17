@@ -9,4 +9,6 @@ public interface PersonService {
     List<Person> findAll();
     Person findById(int id);
     List<Person> findByNameContains(String filter);
+    List<Person> searchByName(String name);
+
 }

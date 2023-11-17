@@ -39,16 +39,7 @@ public class MessageController {
     public Message getMessage(@PathVariable int id){
         return messageService.findById(id);
     }
-
-
-//    @GetMapping("/messages/{id}")
-//    public Message getMessage(@PathVariable int id, @RequestParam(value = "filter", defaultValue = "No filter", required = false) String filter){
-//        Message message = new Message();
-//        message.setContent("the message " + id + " is " + filter);
-//        return message;
-//    }
-
-}
+    }
 
 
 /**

@@ -13,5 +13,4 @@ public interface MessageRepository extends CrudRepository<Message, Integer> {
     /**
      * this is called DSL
      */
-
 }

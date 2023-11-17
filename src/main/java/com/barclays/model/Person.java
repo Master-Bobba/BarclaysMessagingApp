@@ -1,9 +1,6 @@
 package com.barclays.model;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.beans.ConstructorProperties;
@@ -22,11 +19,13 @@ public class Person {
     private String name;
     private String email;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Address address;
+
     public Person(String name, String email){
         this.name = name;
         this.email = email;
     }
-
     public Person(String name){
         this.name = name;
     }

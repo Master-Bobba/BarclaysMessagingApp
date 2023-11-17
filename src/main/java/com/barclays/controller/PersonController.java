@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -50,5 +51,11 @@ public class PersonController {
 //        log.debug("Filter is " + filter);
 //        return people.get(i);
 //    }
+
+    @GetMapping("/person/search")
+    public List<Person>searchByName(@PathParam("name") String name) {
+        return personService.searchByName(name);
+    }
+
 
 }
