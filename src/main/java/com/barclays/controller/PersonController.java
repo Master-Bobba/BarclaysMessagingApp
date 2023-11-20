@@ -4,12 +4,10 @@ import com.barclays.model.Message;
 import com.barclays.model.Person;
 import com.barclays.service.PersonService;
 import io.micrometer.common.util.StringUtils;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,6 +53,12 @@ public class PersonController {
     @GetMapping("/person/search")
     public List<Person>searchByName(@PathParam("name") String name) {
         return personService.searchByName(name);
+    }
+
+    @PostMapping("/person")
+    public Person createPerson(@RequestBody Person person){
+        log.debug(String.valueOf(person));
+        return personService.save(person);
     }
 
 

@@ -11,4 +11,6 @@ public interface PersonService {
     List<Person> findByNameContains(String filter);
     List<Person> searchByName(String name);
 
+    public Person save(Person person);
+
 }

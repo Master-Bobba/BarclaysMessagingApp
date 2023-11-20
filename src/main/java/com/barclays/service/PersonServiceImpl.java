@@ -41,5 +41,10 @@ public class PersonServiceImpl implements PersonService{
         return personRepository.searchByName(name);
     }
 
+    @Override
+    public Person save(Person person) {
+        return personRepository.save(person);
+    }
+
 
 }

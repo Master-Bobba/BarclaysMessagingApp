@@ -10,6 +10,7 @@ import java.beans.ConstructorProperties;
 @Setter
 @Getter
 @Entity
+@ToString
 public class Person {
 
     @Id
@@ -29,6 +30,8 @@ public class Person {
     public Person(String name){
         this.name = name;
     }
+
+
 
 }
 
