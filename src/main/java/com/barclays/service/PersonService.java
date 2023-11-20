@@ -12,5 +12,6 @@ public interface PersonService {
     List<Person> searchByName(String name);
 
     Person save(Person person);
+    void deleteById(int id);
 
 }
