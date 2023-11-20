@@ -4,7 +4,6 @@ import com.barclays.model.Message;
 import com.barclays.model.Person;
 import com.barclays.service.PersonService;
 import io.micrometer.common.util.StringUtils;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
