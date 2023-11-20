@@ -60,5 +60,13 @@ public class PersonController {
         return personService.save(person);
     }
 
+    @PutMapping("/person")
+    public Person updatePerson(@RequestBody Person person){
+        log.debug(String.valueOf(person));
+        return personService.save(person);
+    }
+
+
+
 
 }

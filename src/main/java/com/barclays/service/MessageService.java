@@ -11,5 +11,6 @@ public interface MessageService {
     List<Message> findByContentContains(String filter);
 
     Message save(Message message);
+    void deleteById(int id);
 
 }

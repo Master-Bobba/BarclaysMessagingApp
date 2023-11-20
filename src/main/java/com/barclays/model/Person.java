@@ -20,7 +20,7 @@ public class Person {
     private String name;
     private String email;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
     public Person(String name, String email){

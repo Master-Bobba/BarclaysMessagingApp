@@ -42,9 +42,21 @@ public class MessageController {
 
 
     @PostMapping("/message")
-    public Message createPerson(@RequestBody Message message) {
+    public Message createMessage(@RequestBody Message message) {
         log.debug(String.valueOf(message));
         return messageService.save(message);
+    }
+
+    @PutMapping("/message")
+    public Message updateMessage(@RequestBody Message message) {
+        log.debug(String.valueOf(message));
+        return messageService.save(message);
+    }
+
+    @DeleteMapping("/message/{id}")
+    public void deleteMessage(@PathVariable int id) {
+        log.debug("delete by ID called");
+        messageService.deleteById(id);
     }
 
 }
