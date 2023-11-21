@@ -15,8 +15,8 @@ public class BarclaysMessagingAppApplication {
 //		MessagePopulator populator = context.getBean("messagePopulator", MessagePopulator.class);
 //		populator.populate();
 
-		PersonPopulator personPopulator = context.getBean("personPopulator", PersonPopulator.class);
-		personPopulator.populate();
+//		PersonPopulator personPopulator = context.getBean("personPopulator", PersonPopulator.class);
+//		personPopulator.populate();
 	}
 
 }
